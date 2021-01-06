@@ -14,11 +14,10 @@ pipeline {
         sh 'npm test'
       }
     }
-  }
-     
     stage('Deploy') {
         steps {
             sh 'npx serve -s build'
         }
-    }  
+    } 
+  }
 }
