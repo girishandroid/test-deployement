@@ -1,11 +1,13 @@
 pipeline {
   agent any
-    
+
+  tools {nodejs "node"}
+
   stages {
      
     stage('Build') {
       steps {
-        sh 'npx serve -s build'
+        sh 'npm install -g serve'
       }
     }
             
@@ -16,7 +18,7 @@ pipeline {
     }
     stage('Deploy') {
         steps {
-            sh 'npx serve -s build'
+            sh 'serve -s build'
         }
     } 
   }
